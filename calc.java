@@ -2,6 +2,7 @@ import java.util.Scanner;
 
 class calc {
     public static void main(String[] args) {
+        int entryLimit = 5; // set this to the desired entry limit
         Scanner scanner = new Scanner(System.in);
 
         System.out.print("Enter the first number: ");
@@ -17,6 +18,9 @@ class calc {
         System.out.println("4. Division");
 
         int operation = scanner.nextInt();
+        if (num1 > entryLimit || num2 > entryLimit) {
+            operation = -1;
+        }
         double result = 0;
 
         switch (operation) {
